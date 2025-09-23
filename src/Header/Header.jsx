@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import Button from "../Button/Button";
 import useTelegram from "../hooks/useTelegram";
 
@@ -8,7 +7,7 @@ const Header = () => {
   return (
     <div className={"header"}>
       <Button onClick={onClose}>Закрыть</Button>
-      <span className={"username"}>{user?.userName}</span>
+      <span className={"username"}>{user?.username}</span>
     </div>
   );
 };
