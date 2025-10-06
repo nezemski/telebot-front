@@ -18,7 +18,7 @@ const Form = () => {
     if (!street || !city) {
       tg.MainButton.hide();
     } else tg.MainButton.show();
-  }, [street, city]);
+  }, [tg.MainButton, street, city]);
 
   const onChangeCountry = (e) => {
     setCountry(e.target.value);
