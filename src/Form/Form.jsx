@@ -11,16 +11,16 @@ const Form = () => {
   const { tg } = useTelegram();
 
   const onSendData = useCallback(() => {
-    const data = { city, street, subject };
+    const data = { country, city, street, subject };
     tg.sendData(JSON.stringify(data));
-  }, [tg, city, street, subject]);
+  }, [city, street, subject, country]);
 
   useEffect(() => {
     tg.WebApp.onEvent("mainButtonClicked", onSendData);
     return () => {
       tg.WebApp.offEvent("mainButtonClicked", onSendData);
     };
-  }, [onSendData, tg.WebApp]);
+  }, [onSendData]);
 
   useEffect(() => {
     tg.MainButton.setParams({ text: "Отправить данные" });
